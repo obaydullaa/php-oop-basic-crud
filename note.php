@@ -23,6 +23,10 @@ Support.php ->
 */
 <?php 
 
+/**
+ * OOP part 16 ( Database class design )
+ */
+
 //  Database.php  
  
 //  abstract Class Database {
@@ -90,3 +94,51 @@ Support.php ->
 //       }
 
 //  } 
+
+
+/**
+ * OOP part 17 ( Add form design )
+ * Done
+ */
+
+ /**
+  * OOP part 18 ( Data send to controller )
+  */
+
+
+//   index.php 
+
+// <?php
+// 	include_once "autoload.php";
+// 	$user = new User();
+// 
+
+
+	/**
+	 * Isseting Form
+	 */
+
+	// if(isset($_POST['add'])) {
+	// 	$name = $_POST['name'];
+	// 	$email = $_POST['email'];
+	// 	$cell = $_POST['cell'];
+	// 	$uname = $_POST['uname'];
+
+	// 	$user->userTomeJao($name, $email, $cell, $uname);
+	// } 
+
+    // User.php ->
+    //------------------------
+    
+    // Class User {
+
+    //     /**
+    //      * 
+    //      * User add
+    //      * 
+    //      */
+    //     public function userTomeJao($name, $email, $cell, $uname) {
+    //         echo "My name is " . $name;
+    //     }
+        
+    //  }

@@ -1,3 +1,11 @@
+<?php
+	include_once "autoload.php";
+	$user = new User();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +17,20 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
+
+<?php
+	/**
+	 * Isseting Form
+	 */
+	if(isset($_POST['add'])) {
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$cell = $_POST['cell'];
+		$uname = $_POST['uname'];
+
+		$user->userTomeJao($name, $email, $cell, $uname);
+	}
+?>
 	
 	
 
@@ -104,32 +126,31 @@
 				<div class="modal-body">
 					<h2>Add New User</h2>
 					<hr>
-					<form action="">
+					<form action="" method="POST">
 						<div class="form-group">
 							<label class="form-lebel" for="">Name</label>
-							<input class="form-control" type="text">
+							<input name="name" class="form-control" type="text">
 						</div>
 						<div class="form-group">
 							<label class="form-lebel" for="">Email</label>
-							<input class="form-control" type="text">
+							<input name="email" class="form-control" type="text">
 						</div>
 						<div class="form-group">
 							<label class="form-lebel" for="">Cell</label>
-							<input class="form-control" type="text">
+							<input name="cell" class="form-control" type="text">
 						</div>
 						<div class="form-group">
 							<label class="form-lebel" for="">username</label>
-							<input class="form-control" type="text">
+							<input name="uname" class="form-control" type="text">
 						</div>
 						<div class="form-group">
-							<input  type="submit" value="Add" class="btn btn-primary w-100">
+							<input name="add"  type="submit" value="Add" class="btn btn-primary w-100">
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 
 	<!-- JS FILES  -->
