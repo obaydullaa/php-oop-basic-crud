@@ -142,3 +142,66 @@ Support.php ->
     //     }
         
     //  }
+
+    /**
+     *  OOP part 19 ( data send to database )
+     */
+
+
+    //  index.php
+    // if(isset($_POST['add'])) {
+	// 	$name = $_POST['name'];
+	// 	$email = $_POST['email'];
+	// 	$cell = $_POST['cell'];
+	// 	$uname = $_POST['uname'];
+
+	// 	$user->userTomeJao($name, $email, $cell, $uname); // call this method
+	// }
+
+
+    //  User.php 
+    // Class User extends Database {
+
+    //     /**
+    //      * 
+    //      * User add
+    //      * 
+    //      */
+    //     public function userTomeJao($name, $email, $cell, $uname) {
+    //         parent::create("INSERT INTO users (name, email, cell, username) VALUES ('$name','$email','$cell','$uname')");
+    //     }
+        
+    //  }
+
+    /**
+     * OOP part 20 ( data all show )
+     * 
+     */
+    <?php
+        $data = $user ->sobUserCholeAso();
+        $i = 1;
+        while($d = $data -> fetch_object()) :
+ 
+    ?>
+    <tr>
+        <td><?php echo $i; $i++ ?></td>
+        <td><?php echo $d->name ?></td>
+        <td><?php echo $d->email ?></td>
+        <td><?php echo $d->cell ?></td>
+        <td><img src="assets/media/img/pp_photo/istockphoto-615279718-612x612.jpg" alt=""></td>
+        <td>
+            <a class="btn btn-sm btn-info" href="#">View</a>
+            <a class="btn btn-sm btn-warning" href="#">Edit</a>
+            <a class="btn btn-sm btn-danger" href="?delete_id=<?php echo $d->id ?>">Delete</a>
+        </td>
+    </tr>
+    <?php endwhile; ?>
+
+
+    /**
+    * OOP part 21 ( data delete )
+    */ 
+
+    index.php 
+
+    <a class="btn btn-sm btn-danger" href="?delete_id=<?php echo $d->id ?>">Delete</a>

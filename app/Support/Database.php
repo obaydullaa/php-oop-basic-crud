@@ -22,8 +22,8 @@
      /**
       * Create Data
       */
-      protected function create() {
-
+      protected function create($sql) {
+        $this->connection()->query($sql);
       }
 
      /**
@@ -36,8 +36,8 @@
      /**
       * delete Data
       */
-      protected function delete() {
-
+      protected function delete($table, $id) {
+        $this->connection()->query("DELETE FROM $table WHERE id='$id'");
       }
 
      /**
@@ -50,8 +50,8 @@
      /**
       * All Data
       */
-      protected function all() {
-
+      protected function all($table, $order= "DESC") {
+        return $this->connection()-> query("SELECT * FROM $table ORDER by id $order");
       }
 
      /**
