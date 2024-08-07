@@ -202,6 +202,53 @@ Support.php ->
     * OOP part 21 ( data delete )
     */ 
 
-    index.php 
+    index.php
+    ------------------------ 
+    
+	if(isset($_GET['delete_id'])) {
+		$id = $_GET['delete_id'];
+		$user->userDhonso($id);
+		// header("location:index.php");
+	}
 
     <a class="btn btn-sm btn-danger" href="?delete_id=<?php echo $d->id ?>">Delete</a>
+
+    User class 
+    ------------------------ 
+    
+   public function userDhonso($id) {
+      parent::delete('users', $id);
+   }
+
+
+   Database.php 
+   ------------------- 
+   protected function delete($table, $id) {
+        $this->connection()->query("DELETE FROM $table WHERE id='$id'");
+      }
+
+
+      /**
+      *  OOP part 22 ( Quarity string dev )
+      */
+      Namespace  -> নেমস্পেস মুলত ডিরেক্টরি বা ফাইলের লোকেশন ।
+আমাদের প্রজেক্টে একই নামের কয়েকটা ক্লাস থাকতে পারে, একটা ক্লাসের সাথে আরেকোটা ক্লাস ফ্লাস না হয়ে  যায় এই জন্য Namespace ব্যাবহার করতে হয় । 
+
+একাধিক function , class , interface , constant , trait , abstract  থাকতে পারে একটা  আরেকোটার সাথে ফ্লাস না হয় এই জন্য Namespace ব্যাবহার করতে হয় । 
+
+laravel এর একটি ফাইল একটা নেমস্পেস হবে । বাকি গুলা use ব্যবহার করে নেমস্পেশ দেখাতে হয়  ।
+
+আপানার লারাভেল প্যাকেজে বা অন্য যেকোনো পি এইচ পি ডেভেলপমেন্ট প্রোজেক্ট এ যদি একই নামে একাধিক function , class , interface , constant , trait , abstract থাকে তখন সমস্যা সৃষ্টি হবে । কোন টা ব্য্যবহার হচ্ছে সেটা ফিক্স করা সম্ভব না । এই সমস্যা সমাধানের জন্য নেমস্পেস ব্যবহার করা হয় ।
+
+নেমস্পেসের মাধ্যমে ইমপোর্ট করা হয় use operator দিয়ে ।
+
+একই নামের ২ টা ক্লাস থকলে Alias user করতে হবে  alias user kora hoi as diye।
+
+use App\Controller\Student;
+use AppSupport\Student\Student as MyStudent
+
+$stu = new MyStudent;
+
+      /**
+      * OOP part 23 ( Namespace )
+      */
