@@ -304,3 +304,42 @@ $stu = new MyStudent;
         $stu->staff();
         echo "<br>";
         $user->info();
+
+        /**
+         * OOP part 25 ( psr 4 part 1 )
+         * pacagists website for package management 
+         */
+
+         1. Dwonload Composer
+         2. Composer init
+         2. Github user name  -> Obaydullaa/oopname
+            package descriptions -> this is test project
+            Minimum Stability -> stable
+         4. licence MIT
+
+
+         psr 4 
+         -------- 
+         PSR-4 stands for "PHP Standards Recommendation 4". It is a standard developed by the PHP Framework Interoperability Group (FIG) that describes a specification for autoloading classes from file paths. The goal of PSR-4 is to provide a standardized way to load PHP classes automatically without having to manually include them.
+
+         auto crate comoser.json
+         {
+            "name": "obaydulla/ooptest",
+            "description": "This is a test project.",
+            "type": "project",
+            "license": "MIT",
+            "minimum-stability": "stable",
+            "require": {}
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app";
+                }
+            }
+        }
+        
+
+         /**
+          * OOP part 26 ( psr 4 part 2 )
+          */
+
+
