@@ -341,5 +341,167 @@ $stu = new MyStudent;
          /**
           * OOP part 26 ( psr 4 part 2 )
           */
+            Discus with composer. 
 
 
+
+
+            /**
+             *  OOP part 27 ( interface, implements )
+             */
+            * interface
+            -------------------
+            ইন্টারফেস ক্লাস (Interface Class) : এর আগে এবস্ট্রাক্ট ক্লাস সম্পর্কে আলোচনা হয়েছে।এবস্ট্রাক্ট ক্লাস আর ইন্টারফেস ক্লাস হুবহু একই শুধু পার্থক্য হচ্ছে এবস্ট্রাক্ট ক্লাসে এবস্ট্রাক্ট মেথড ছাড়াও অন্য মেথড থাকতে পারে এবং এই মেথডের ভিতর কোড থাকতে পারে (সাধারনত এটাকে মেথড বডি বলে) আর ইন্টারফেস ক্লাসে কোন মেথডে বডি থাকতে পারবেনা।
+            
+            interface onno onno class ke baddo kore kaj korar jonno...... aikhane method mody thakbe na eta implements  korte hoi not extends
+             example....
+            interface Student {
+                public function dev($name, $age);
+            }
+
+            class Users implements Student {
+                function dev($name, $age) {
+                    echo "I am " .$name . $age;
+                }
+            }
+
+            $dev = new Users;
+
+            $dev->dev('interface', 20);
+
+            /**
+             * OOP part 28 ( Trait )
+             */
+
+multiple inheretence kora jai. php te multiple inheretence nai ........ ja class a dorkar sekhane  use keword diye extend korte hoi.
+
+Example:- 
+ Trait A {
+    public function dev() {
+        return "I am from Dev A";
+    }
+    public function play() {
+        return "I am love to Play A";
+    }
+    public function game() {
+        return "I am play game to A";
+    }
+ }
+
+ class B {
+    public function food() {
+        return "I am food from B";
+    }
+ }
+
+ class C extends B {
+    use A;
+ }
+
+ $c = new C;
+ echo $c->play();
+
+
+ /**
+  * OOP part 29 ( method chain )
+  */
+
+  class Student {
+
+    private $name = "Obaydulla";
+    private $age = 5;
+    private $dev = "Laravel Developer";
+
+
+    /**
+     * Set Student name
+     */
+     public function setName($name) {
+        $this-> name = $name;
+        return  $this;
+     }
+
+    /**
+     * Set Student age
+     */
+
+     public function setAge($age) {
+        $this-> age = $age;
+        return  $this;
+     }
+
+     
+    /**
+     * Set Student name
+     */
+    public function setDev($dev) {
+        $this-> dev = $dev;
+        return  $this;
+     }
+
+    /**
+     * info methods
+     */
+    public function info() {
+        return "My name is ". $this->name ." & I am ". $this->age ." years old and I am a " . $this->dev ;
+    }
+ }
+
+ $student = new Student;
+
+ echo $student -> setDev("Java Developer") -> setName("Refat")->setAge(150)->info();
+
+
+/**
+ * OOP part 30 ( magic method )
+ *   1. __construct() & __destruct() method call korte hoi na automatic load hoye jai. ader before dubble under score thake.
+ * * __get() -> ja property golo nai or private kora sei property golo dorte pare.. eta only propery ar magic method
+ * __set() holo amon ekta method jeta nai or provate kora setar value dore amra kaj korte parbo. example echo $a -> name = 'Refat'; value set kore dilam 
+ * __call() holo ja method golo nai sei golo dora jai... its call __call() method
+ */
+
+ // __get() & __set() method
+//  class A {
+//     private $name = "Obaydulla";
+//     public $age = 20;
+//     public $job = "Laravel Developer";
+
+//     public function info() {
+
+//     }
+
+//     public function __get($property) {
+//         echo $property . " Property is Invalid";
+//     }
+
+//     public function __set($propery, $value) {
+        
+//     }
+
+//  }
+
+//  $a = new A;
+
+//  echo $a -> name; // get 
+//  echo $a -> name = "Refat"; // set
+
+
+// __call() method holo ja method golo nai sei colo catch korte pare.
+//  class A {
+//     private $name = "Obaydulla";
+//     public $age = 20;
+//     public $job = "Laravel Developer";
+
+ 
+
+//     public function __call($method, $agrs) {
+//         echo $method . " method is invalid";
+//     }
+
+//  }
+
+//  $a = new A;
+
+// //  echo $a -> name = 'Refat'; // __set() exmamples 
+
+//  echo $a -> play();  
