@@ -1,0 +1,14 @@
+<?php
+ /**
+ * Relationship Practices
+ */
+
+ 1. One to One relationship
+ ------------------------------
+** Facebook Posts
+
+
+- User Model
+
+
+
